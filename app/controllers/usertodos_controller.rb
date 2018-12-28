@@ -1,0 +1,2 @@
+class UsertodosController < ApplicationController
+end
