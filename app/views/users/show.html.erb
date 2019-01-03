@@ -1,8 +1,23 @@
 
-<h1><%= @user.username %><h1>
-<h1> <%= @user.email %> <h1>
+<%= render 'shared/header' %>
+
+<h1>Welcome blah<h1>
 
 
-<%= form_tag session_path, method: 'delete' do %>
-    <%=submit_tag "Log out" %>
-    <%end%>
+<ul>
+  <div class="container">
+    <% @current_user_todos.each do |todo| %>
+      <div class="square">
+      <li>  <%= todo.title %> </li>
+      </div>
+    <% end %>
+  </div>
+</ul>
+
+<h1>Create a New Todo </h1>
+
+<%= form_for Todo.new do |f| %>
+<%= f.label :title  %>
+<%= f.text_field :title %>
+<%= f.submit 'Add New Todo'%>
+<% end %>

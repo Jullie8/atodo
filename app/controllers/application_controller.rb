@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  helper_method :current_user, :logged_in?
     def log_in!(user)
         session[:user_id] = user.id
     end
@@ -14,5 +15,11 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !current_user.nil?
   end
+
+  # def is_client_logged_in?
+  #   !!session[:customer_id]
+  # end
+
+  # helper_method :is_client_logged_in?
 
 end

@@ -16,5 +16,23 @@
 
 /* Add a black background color to the top navigation */
 
+body {
+    font-family: 'Asul', sans-serif;
+}
 
+ul {
+    font-size: 18px;
+}
 
+.square {
+    width: 50vw;
+    height: 20vw;
+    display: grid;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+    grid-gap: 10px;
+    justify-content: center;
+}

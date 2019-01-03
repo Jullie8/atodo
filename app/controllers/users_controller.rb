@@ -4,11 +4,15 @@ class UsersController < ApplicationController
     end
     
     def show
-        @user = User.find(params[:id])
+        # @user = User.find(params[:id])
+        # byebug
+        @current_user_todos = current_user.todos
+        # @todos = Todo.all
     end
 
     def new
         @user = User.new
+        @usertodo = Usertodo.new
     end
 
     def create
