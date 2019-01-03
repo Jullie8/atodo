@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
   get "/pages/:page" => "pages#show"
   root "pages#show", page: "home"
+  resources :sessions, only: [:new, :create]
   resources :tasks
   resources :usertodos
   resources :todos
