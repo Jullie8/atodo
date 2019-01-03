@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     # if user && user.authenticate(params[:session][:password])
 
     user = User.find_by(email: params[:email].downcase)
-  
+  #  byebug
     if user && user.authenticate(params[:password])
       # Log the user in and redirect to the user's show page.
       log_in! user
@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
     end
   end
 
-    # Logs out the current user.
+    # Logs out the current user. test
 
     def destroy 
     session.delete(:user_id)
