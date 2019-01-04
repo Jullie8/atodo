@@ -1,7 +1,7 @@
 class User < ApplicationRecord
     has_many :usertodos
     has_many :todos, through: :usertodos
-    has_many :tasks, through: :todos
+    # has_many :tasks, through: :todos
 
     before_save { self.email = email.downcase }
     validates :username,  presence: true, length: { maximum: 50 }

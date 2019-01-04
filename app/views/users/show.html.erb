@@ -1,14 +1,22 @@
-
-<%= render 'shared/header' %>
-
-<h1>Welcome blah<h1>
+ <%= render 'shared/header' %>
+<h1>Welcome <%=@user.username.capitalize%><h1>
 
 
 <ul>
   <div class="container">
     <% @current_user_todos.each do |todo| %>
       <div class="square">
-      <li>  <%= todo.title %> </li>
+      <li> <%=todo.title %> 
+      <%= button_to "Edit Todo Title", edit_todo_path(todo), method: :get %>
+            
+      <%= form_tag todo_path(todo), method: 'delete' do %>
+          <%=submit_tag "Delete todo" %>
+      <%end%>
+
+        <p>View all your tasks here </p> 
+       <%= button_to "Tasks 4 This Todo", todo_path(todo), method: :get %>
+
+      </li>
       </div>
     <% end %>
   </div>

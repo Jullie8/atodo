@@ -4,15 +4,18 @@ class UsersController < ApplicationController
     end
     
     def show
-        # @user = User.find(params[:id])
+        @user = User.find(params[:id])
         # byebug
         @current_user_todos = current_user.todos
-        # @todos = Todo.all
     end
 
+    def todo
+        @todo = Todo.find(params[:id])
+    end
     def new
         @user = User.new
         @usertodo = Usertodo.new
+        @todo = Todo.new
     end
 
     def create
@@ -24,9 +27,16 @@ class UsersController < ApplicationController
             flash[:success] = "Welcome to the A Todo App!"
             redirect_to @user
         else 
-            render 'new'
+            render :new
         end
     end
+
+    def edit 
+        @current_user_todos = current_user.todos
+    end
+
+    def update 
+    end 
 
     private
 

@@ -1,0 +1,25 @@
+<h1>List Title:<%=@todo.title %> </h1>
+
+<h3> List description: </h3>
+<ul>
+<% @todo.tasks.each do |task| %>
+  <li>  <%= task.description %> <%= button_to "Edit This Task", edit_task_path(task), method: :get %> </li> 
+     
+  <%= form_tag task_path(task), method: 'delete' do %>
+        <%=submit_tag "Delete task" %>
+        <% end %>
+
+        <br />
+  <%end%>
+
+</ul>
+
+
+<%= form_for Task.new do |f| %>
+  <%= f.label :description %>
+  <%= f.text_field :description%>
+  <%= f.hidden_field :todo_id, value:@todo.id %>
+  <%= f.submit "Add Task" %>
+<% end %>
+
+

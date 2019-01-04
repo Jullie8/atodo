@@ -18,6 +18,9 @@
 
 body {
     font-family: 'Asul', sans-serif;
+    // background-image: url("/Users/Julissa/Desktop/atodo/app/assets/images/Screen Shot 2019-01-03 at 7.14.44 PM.png");
+    // background-repeat: no-repeat, repeat;
+    // background-size: cover;
 }
 
 ul {
@@ -32,7 +35,7 @@ ul {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 10px;
     justify-content: center;
 }
